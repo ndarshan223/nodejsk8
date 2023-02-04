@@ -1,0 +1,30 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: "hello-nodejs"
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      appname: "hello-nodejs"
+      version: "{{BUILD_NUMBER}}"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        appname: "hello-nodejs"
+        version: "{{BUILD_NUMBER}}"
+    spec:
+      containers:
+      - name: "hello-nodejs"
+        image: "{{DOCKER_REPO}}:{{BUILD_NUMBER}}"
+        resources:
+          limits:
+            memory: "128M"
+            cpu: "1"
+          requests:
+            cpu: "0"
+        ports:
+        - name: "port-8080"
+          containerPort: 8080

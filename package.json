@@ -1,0 +1,22 @@
+{
+  "name": "node_pattern",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~4.0.0",
+    "body-parser": "~1.0.1",
+    "winston": "2.2.0",
+    "timezonecomplete": "5.4.1",
+    "sprintf-js": "1.0.3"
+  },
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "mocha": "^2.3.3",
+    "mocha-bamboo-reporter": "^1.1.0",
+    "node-mocks-http": "^1.5.0",
+    "really-need": "^1.7.0",
+    "should": "^7.1.1",
+    "sinon": "^1.17.2",
+    "supertest": "^1.1.0"
+  }
+}
